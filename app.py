@@ -41,7 +41,7 @@ def index():  # put application's code here
     data = list()
     data_link = list()
     for i in df['ID'].iteritems():
-        data.append([i[0], 'http://127.0.0.1:5000/accom/M20{}23'.format(i[0])])
+        data.append([i[0], 'http://joda-tuni.azurewebsites.net/accom/M20{}23'.format(i[0])])
     return render_template('index.html', headings=headings, data=data)
 
 @app.route('/accom/M20<accom_id>23')
