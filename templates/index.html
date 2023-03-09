@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/table_style.css') }}"/>
+        <title>Tampere BNB</title>
+    </head>
+    <body>
+        <table id="listingTable">
+            <tr> {% for header in headings %}
+                <th>
+                    {{ header }}
+                </th>
+                {% endfor %}
+            </tr>
+            {% for data in data %}
+            <tr>
+                <td>
+                   {{ data[0] }}
+                </td>
+                <td>
+                    <a href="{{data[1]}}">{{data[1]}}</a>
+                </td>
+                {% endfor %}
+            </tr>
+        </table>
+      <a onclick="prevPage()" href='#' id="btn_prev">Prev</a>
+      <a onclick="nextPage()" href='#' id="btn_next">Next</a>
+      page: <span id="page"></span>
+
+     <script src="{{ url_for('static', filename='js/table_script.js') }}"></script>
+    
+    </body>
+</html>
