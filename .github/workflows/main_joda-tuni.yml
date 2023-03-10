@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'Joda-tuni'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BB363D0A8DC345F9A16F2D462ADCE6D3 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C68A2045136A42FC844293B5082238ED }}
