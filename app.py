@@ -56,6 +56,7 @@ def show_accom_url(accom_id):
         accom_neighbour = df["Kaupunginosa"].loc[accom_id]
         price = df["Hinta"].loc[accom_id]
         floor = df["Krs"].loc[accom_id]
+        elevator = df["Hissi"].loc[accom_id] 
         year = df['Rv'].loc[accom_id]
         condition = df["Kunto"].loc[accom_id]
         ap_type = df['Asunnon tyyppi'].loc[accom_id]
@@ -63,10 +64,11 @@ def show_accom_url(accom_id):
         longitude = df['Pituusaste'].loc[accom_id]
         latitude = df['Leveysaste'].loc[accom_id]
 
-        if "on" in df["Hissi"].values:
-            elevator = "does have"
-        else:
+
+        if "ei" in elevator:
             elevator = "does not have"
+        else:
+            elevator = "does have"
 
         if floor == 0:
             floor = floor
