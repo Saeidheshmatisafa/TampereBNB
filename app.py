@@ -40,12 +40,13 @@ def random_num():
 def index():  # put application's code here
     data = list()
     data_link = list()
-    for i in df['ID'].iteritems():
-        data.append([i[0], 'https://joda-tuni.azurewebsites.net/accom/M20{}23'.format(i[0])])
+    for i in df['ID'].items():
+        data.append([i[0], f'accom/M20{i[0]}23.html'])
+        #data.append([i[0], 'https://joda-tuni.azurewebsites.net/accom/M20{}23'.format(i[0])])
     return render_template('index.html', headings=headings, data=data)
 
-@app.route('/accom/M20<accom_id>23')
-def show_accom_url(accom_id):
+@app.route('/accom/M20<int:accom_id>23.html')
+def accom(accom_id):
     id_ = None
     accom_neighbour = None
     accom_id = int(accom_id)
@@ -80,8 +81,17 @@ def show_accom_url(accom_id):
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template('index.html'), 404
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def internal_error(e):
+    return render_template('500.html'), 500
+
+@app.route('/error.html')
+def error_page():
+    return render_template("error.html")
+
 
 if __name__ == '__main__':
-    #app.debug = True
+    app.debug = True
     app.run(host="0.0.0.0")

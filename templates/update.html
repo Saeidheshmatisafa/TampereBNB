@@ -5,43 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}" />
     <title>ampere BNB</title>
 </head>
 
 <body>
-    <h1 class="heading">Wonderful OLD TOWN apartment M10</h1>
+    <h1 class="heading">{{ home_rand_adj }} apartment {{ accom_id }}</h1>
     <!-- Slideshow container -->
     <div class="slideshow-container">
 
         <!-- Full-width images with number and caption text -->
         <div class="mySlides fade">
             <div class="numbertext">1 / 6</div>
-            <img src="static/images/img2.jpg" style="width:100%">
+            <img src="{{ url_for('static', filename='images/img2.jpg') }}" style="width:100%" loading="lazy">
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">2 / 6</div>
-            <img src="static/images/img1.jpg" style="width:100%">
+            <img src="{{ url_for('static', filename='images/img1.jpg') }}" style="width:100%" loading="lazy">
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">3 / 6</div>
-            <img src="static/images/img3.jpg" style="width:100%">
+            <img src="{{ url_for('static', filename='images/img3.jpg') }}" style="width:100%" loading="lazy">
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">4 / 6</div>
-            <img src="static/images/img4.jpg" style="width:100%">
+            <img src="{{ url_for('static', filename='images/img4.jpg') }}" style="width:100%" loading="lazy">
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">5 / 6</div>
-            <img src="static/images/img5.jpg" style="width:100%">
+            <img src="{{ url_for('static', filename='images/img5.jpg') }}" style="width:100%" loading="lazy">
         </div>
         <div class="mySlides fade">
             <div class="numbertext">6 / 6</div>
-            <img src="static/images/img6.jpg" style="width:100%">
+            <img src="{{ url_for('static', filename='images/img6.jpg') }}" style="width:100%" loading="lazy">
         </div>
 
         <!-- Next and previous buttons -->
@@ -298,7 +298,7 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBU_e8xwwBC69hGcNEpNZ5sPJ0v0ZJXtuo&callback=initMap&v=weekly"
         defer>
         </script>
-    <script src="../static/js/script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 
 </html>
