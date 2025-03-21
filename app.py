@@ -41,8 +41,8 @@ def index():  # put application's code here
     data = list()
     data_link = list()
     for i in df['ID'].items():
-        data.append([i[0], f'accom/M20{i[0]}23.html'])
-        #data.append([i[0], 'https://joda-tuni.azurewebsites.net/accom/M20{}23'.format(i[0])])
+        #data.append([i[0], f'accom/M20{i[0]}23.html'])
+        data.append([i[0], f'https://joda-tuni.azurewebsites.net/accom/M20{i[0]}23.html'])
     return render_template('index.html', headings=headings, data=data)
 
 @app.route('/accom/M20<int:accom_id>23.html')
@@ -93,5 +93,5 @@ def error_page():
 
 
 if __name__ == '__main__':
-    app.debug = True
+    #app.debug = True
     app.run(host="0.0.0.0")
